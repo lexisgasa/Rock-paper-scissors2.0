@@ -1,7 +1,7 @@
 /* Variables */
 
 let computerPickValue;
-let computerPickValueName;
+let computerPickName;
 let userPickName;
 let userPickValue;
 let playerSelection = userPlay();
@@ -9,7 +9,7 @@ let computerSelection = computerPlay();
 
 
 
-/* Main function */
+/* Main function 
 
 function playRound (playerSelection, computerSelection) {
 
@@ -21,6 +21,7 @@ function playRound (playerSelection, computerSelection) {
         return "Draw"; 
     }
 }
+*/
 
 
 
@@ -36,11 +37,13 @@ function computerPlay () {
 }
 
 function userPlay() {
-userPickName = prompt("Choose your option; rock, paper or scissors:")
+userPickName = prompt("Choose your option; rock, paper or scissors:");
 userPickName = userPickName.charAt(0).toUpperCase() + userPickName.slice(1).toLowerCase();
 (userPickName === "Rock") ? userPickValue = "1" : "" ;
 (userPickName === "Paper") ? userPickValue = "2" : "" ;
 (userPickName === "Scissors") ? userPickValue = "3" : "" ;
+console.log(userPickName);
+console.log(userPickValue);
 }
 
 /* values

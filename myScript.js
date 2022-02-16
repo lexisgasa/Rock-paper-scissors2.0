@@ -34,6 +34,8 @@ function computerPlay () {
     (computerPickValue === 1 ) ? computerPickName= "Rock" : " " ;
     (computerPickValue === 2 ) ? computerPickName = "Paper" : " " ;
     (computerPickValue === 3 ) ? computerPickName = "Scissors" : " " ;
+    console.log(computerPickName);
+    console.log(computerPickValue);
 }
 
 function userPlay() {

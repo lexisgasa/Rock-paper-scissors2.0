@@ -1,7 +1,7 @@
 /* Variables */
 
-let computerPick;
 let computerPickValue;
+let computerPickValueName;
 let userPickName;
 let userPickValue;
 let playerSelection = userPlay();
@@ -12,15 +12,11 @@ let computerSelection = computerPlay();
 /* Main function */
 
 function playRound (playerSelection, computerSelection) {
-    
-    userPlay();
 
-    computerPlay();
-
-    if (userPickValue === 1 && computerPick === 3 || userPickValue === 2 && computerPick === 1 || userPickValue === 3 && computerPick === 2) {
-        return `You win! ${userPickName} beats ${computerPickValue}!`;
-    } else if (userPickValue === 1 && computerPick === 2 || userPickValue === 2 && computerPick === 3 || userPickValue === 3 && computerPick === 1) {
-        return `You Lose! ${userPickName} loses against ${computerPickValue}!`;
+    if (userPickValue === 1 && computerPickValue === 3 || userPickValue === 2 && computerPickValue === 1 || userPickValue === 3 && computerPickValue === 2) {
+        return `You win! ${userPickName} beats ${computerPickName}!`;
+    } else if (userPickValue === 1 && computerPickValue === 2 || userPickValue === 2 && computerPickValue === 3 || userPickValue === 3 && computerPickValue === 1) {
+        return `You Lose! ${userPickName} loses against ${computerPickName}!`;
     } else {
         return "Draw"; 
     }
@@ -33,10 +29,10 @@ function playRound (playerSelection, computerSelection) {
 /* Subfunctions */
 
 function computerPlay () {
-    computerPick = Math.floor(Math.random()*3)+1;
-    (computerPick === 1 ) ? computerPickValue = "Rock" : " " ;
-    (computerPick === 2 ) ? computerPickValue = "Paper" : " " ;
-    (computerPick === 3 ) ? computerPickValue = "Scissors" : " " ;
+    computerPickValue = Math.floor(Math.random()*3)+1;
+    (computerPickValue === 1 ) ? computerPickName= "Rock" : " " ;
+    (computerPickValue === 2 ) ? computerPickName = "Paper" : " " ;
+    (computerPickValue === 3 ) ? computerPickName = "Scissors" : " " ;
 }
 
 function userPlay() {

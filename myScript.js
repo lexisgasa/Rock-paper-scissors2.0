@@ -4,18 +4,17 @@ let computerPick;
 let computerPickValue;
 let userPickName;
 let userPickValue;
+let playerSelection = userPlay();
+let computerSelection = computerPlay();
 
 
 
 /* Main function */
 
 function playRound (playerSelection, computerSelection) {
-    userPickName = prompt("Choose your option; rock, paper or scissors:")
-    userPickName = userPickName.charAt(0).toUpperCase() + userPickName.slice(1).toLowerCase();
-    (userPickName === "Rock") ? userPickValue = "1" : "" ;
-    (userPickName === "Paper") ? userPickValue = "2" : "" ;
-    (userPickName === "Scissors") ? userPickValue = "3" : "" ;
     
+    userPlay();
+
     computerPlay();
 
     if (userPickValue === 1 && computerPick === 3 || userPickValue === 2 && computerPick === 1 || userPickValue === 3 && computerPick === 2) {
@@ -40,6 +39,13 @@ function computerPlay () {
     (computerPick === 3 ) ? computerPickValue = "Scissors" : " " ;
 }
 
+function userPlay() {
+userPickName = prompt("Choose your option; rock, paper or scissors:")
+userPickName = userPickName.charAt(0).toUpperCase() + userPickName.slice(1).toLowerCase();
+(userPickName === "Rock") ? userPickValue = "1" : "" ;
+(userPickName === "Paper") ? userPickValue = "2" : "" ;
+(userPickName === "Scissors") ? userPickValue = "3" : "" ;
+}
 
 /* values
 1 - ROCK

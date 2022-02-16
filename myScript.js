@@ -9,7 +9,7 @@ let userPickValue;
 
 /* Main function */
 
-function roundStart (playerSelection, computerSelection) {
+function playRound (playerSelection, computerSelection) {
     userPickName = prompt("Choose your option; rock, paper or scissors:")
     userPickName = userPickName.charAt(0).toUpperCase() + userPickName.slice(1).toLowerCase();
     (userPickName === "Rock") ? userPickValue = "1" : "" ;

@@ -1,34 +1,31 @@
-/* Variables */
-
+// Subfunctions 
 let computerPickValue;
 let computerPickName;
-let userPickName;
-let userPickValue;
-let totalWin = 0;
-let totalLose = 0;
-let totalDraw = 0;
-
-/* Subfunctions */
-
 function computerPlay () {
-    computerPickValue = Math.floor(Math.random()*3)+1;
-    (computerPickValue === 1 ) ? computerPickName = "Rock" : " " ;
-    (computerPickValue === 2 ) ? computerPickName = "Paper" : " " ;
-    (computerPickValue === 3 ) ? computerPickName = "Scissors" : " " ;
+    computerPickValue = Math.floor(Math.random()*3);
+    (computerPickValue === 0 ) ? computerPickName = "Rock" : "" ;
+    (computerPickValue === 1 ) ? computerPickName = "Paper" : "" ;
+    (computerPickValue === 2 ) ? computerPickName = "Scissors" : "" ;
 }
 
+let userPickName;
+let userPickValue;
 function userPlay() {
     userPickName = prompt("Choose your option; rock, paper or scissors:");
     userPickName = userPickName.charAt(0).toUpperCase() + userPickName.slice(1).toLowerCase();
-    (userPickName === "Rock") ? userPickValue = 1 : "" ;
-    (userPickName === "Paper") ? userPickValue = 2 : "" ;
-    (userPickName === "Scissors") ? userPickValue = 3 : "" ;
+    (userPickName === "Rock") ? userPickValue = 0 : "" ;
+    (userPickName === "Paper") ? userPickValue = 1 : "" ;
+    (userPickName === "Scissors") ? userPickValue = 2 : "" ;
 }
 
-function playRound () {
-    computerPlay();
-    userPlay();
 
+let totalWin = 0;
+let totalLose = 0;
+let totalDraw = 0;
+function playRound () {
+    userPlay();
+    computerPlay();
+    
     if (userPickValue === 1 && computerPickValue === 3 || userPickValue === 2 && computerPickValue === 1 || userPickValue === 3 && computerPickValue === 2) {
         ++totalWin;
         console.log(`You win! ${userPickName} beats ${computerPickName}!`);
@@ -42,15 +39,16 @@ function playRound () {
 }
 
 
-/* Main function */
+// Main function
 function game () {
+
     for (let i = 0; i < 5; i++){
         playRound();
     }
     (totalWin > totalLose && totalDraw) ? console.log(`You win the game! You won ${totalWin}, lost ${totalLose}, and draw ${totalDraw} games!`) : console.log(`You lost the game! You won ${totalWin}, lost ${totalLose}, and draw ${totalDraw} games!`);
 }
 /* values
-1 - ROCK
-2 - PAPER
-3 - SCISSORS
+0 - ROCK
+1 - PAPER
+2 - SCISSORS
 */

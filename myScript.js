@@ -72,3 +72,4 @@ game, valida algo y asocia valor al azar
 
 // console.log en el userplay, en el game me dice los resultados, si return, en el game no dice nada - la diferencia?
 
+// ternary operator de selecciones, como hacer else? o null si esc

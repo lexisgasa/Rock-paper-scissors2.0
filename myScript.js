@@ -39,6 +39,9 @@ function playRound (playerSelection, computerSelection) {
   
         playerSelection = userPickValue;
         computerSelection = computerPlay();
+        if (totalWin == 5 || totalLose == 5) {
+            return;
+        }
         if (userPickValue === 0 && computerPickValue === 2 || userPickValue === 1 && computerPickValue === 0 || 
             userPickValue === 2 && computerPickValue === 1) {
             totalWin++;

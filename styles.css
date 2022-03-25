@@ -1,0 +1,46 @@
+body {
+    background-color: #F0D9FF;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+    font-size: 5rem
+    
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 6rem;
+    margin: 4rem;
+    transition: 150ms;
+}
+.buttons button:hover {
+    transform: scale(1.2);
+}
+
+.results {
+    display: flex;
+    justify-content: space-evenly;
+}
+.results p {
+    font-size: 2rem;
+}
+
+.results span {
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+
+.announcement {
+    text-align: center;
+    font-size: 2rem;
+    
+}

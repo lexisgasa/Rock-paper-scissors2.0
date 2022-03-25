@@ -39,24 +39,26 @@ function playRound (playerSelection, computerSelection) {
   
         playerSelection = userPickValue;
         computerSelection = computerPlay();
-        if (totalWin == 5) {
-            announce.textContent = "You have won the game!"
-        }
-        else if (totalLose == 5) {
-            announce.textContent = "You have lost the game!"
-        }
-        else if (userPickValue === 0 && computerPickValue === 2 || userPickValue === 1 && computerPickValue === 0 || 
+        if (userPickValue === 0 && computerPickValue === 2 || userPickValue === 1 && computerPickValue === 0 || 
             userPickValue === 2 && computerPickValue === 1) {
             totalWin++;
             announce.textContent = `You won, ${userPickName} beats ${computerPickName}!`;
             userResult.textContent = totalWin;
             computerResult.textContent = totalLose;
+            if (totalWin == 5) {
+                announce.textContent = "You have won the game!"
+                return;
+            }
         } else if (userPickValue === 0 && computerPickValue === 1 || userPickValue === 1 && computerPickValue === 2 ||
             userPickValue === 2 && computerPickValue === 0) {
             totalLose++;
             announce.textContent = `You lose, ${userPickName} beats ${computerPickName}!`;
             userResult.textContent = totalWin;
             computerResult.textContent = totalLose;
+            if (totalLose == 5) {
+                announce.textContent = "You have lost the game!"
+                return;
+            }
         } else if (userPickValue === 0 && computerPickValue === 0 || userPickValue === 1 && computerPickValue === 1 ||
             userPickValue === 2 && computerPickValue === 2) {
             totalDraw++;
